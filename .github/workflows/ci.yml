@@ -39,12 +39,12 @@ jobs:
 
       - name: Compile tests
         run: |
-          javac -d LABO1/lab/bin -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" LABO0/lab/tests/lab/tests/AppTest.java
+          javac -d LABO1/lab/bin -cp "lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" LABO1/lab/tests/lab/tests/AppTest.java
 
       - name: Run tests
         run: |
           # Important: indiquer le nom complet du package de la classe AppTest
-          java -cp "LABO2/lab/bin:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore lab.tests.AppTest
+          java -cp "LABO1/lab/bin:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore lab.tests.AppTest
 
   build:
     name: Build Docker image
