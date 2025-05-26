@@ -30,7 +30,6 @@ public class Produit {
         this.quantite = quantite;
     }
 
-
     public int getId() { return id; }
     public String getNom() { return nom; }
     public String getCategorie() { return categorie; }

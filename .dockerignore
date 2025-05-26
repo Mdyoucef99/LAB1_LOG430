@@ -1,34 +1,17 @@
-# Ignore compiled Java classes
-*.class
-
-# Ignore Maven or Gradle dependencies
+# Build artifacts
 target/
 build/
+*.class
 
-# Ignore IDE files (e.g., IntelliJ, Eclipse)
+# IDE metadata
 .idea/
 *.iml
 .vscode/
 
-# Ignore temporary files
-*.log
-*.tmp
-*.swp
-*.bak
-
-# Ignore configuration files
-*.properties
-*.yml
-*.xml
-
-# Ignore Docker-related files
-Dockerfile
-.dockerignore
-
-# Ignore system files
+# OS junk
 .DS_Store
 Thumbs.db
 
-# Ignore Maven or Gradle cache
-.mvn/
+# Dependency caches (if present)
+.maven/
 .gradle/
