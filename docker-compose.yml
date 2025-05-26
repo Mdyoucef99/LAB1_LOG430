@@ -8,6 +8,7 @@ services:
       POSTGRES_DB: magasin
       POSTGRES_USER: magasin_user
       POSTGRES_PASSWORD: magasinpswd
+
   api:
     build: .
     container_name: lab1_api
@@ -15,6 +16,5 @@ services:
       - db
     environment:
       DB_HOST: db
-      #run it in interactive mode to escape infinite loop
     stdin_open: true     # Same as -i
     tty: true            # Same as -t
