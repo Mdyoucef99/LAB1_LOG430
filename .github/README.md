@@ -1,1 +1,1 @@
-# Lab1 – Application Java Simple
+# Lab1 – POS systeme de point de vente 
