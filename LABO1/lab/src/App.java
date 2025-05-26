@@ -15,12 +15,12 @@ public class App {
             String password = "magasinpswd";
             ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl, user, password);
 
-            // ✅ Crée la table si elle n'existe pas
+            // Crée la table si elle n'existe pas
             TableUtils.createTableIfNotExists(connectionSource, Produit.class);
 
             ProduitDao dao = new ProduitDao(connectionSource);
 
-            // ✅ Initialiser quelques produits (uniquement si la table est vide)
+            //Initialiser quelques produits (uniquement si la table est vide)
             if (dao.getInventaire().isEmpty()) {
                 dao.ajouterProduit(new Produit(1, "Pain", "Nourriture", 2.5, 100));
                 dao.ajouterProduit(new Produit(2, "Lait", "Nourriture", 1.8, 50));
@@ -28,7 +28,7 @@ public class App {
                 System.out.println("Produits ajoutés à la base PostgreSQL.");
             }
 
-            // ✅ Lancer un thread de caisse
+            //Lancer un thread de caisse
             System.out.println("Lancement de la caisse...");
             Thread caisse1 = new Thread(new CaisseService(dao));
             caisse1.start();
