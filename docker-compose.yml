@@ -8,9 +8,8 @@ services:
       POSTGRES_DB: magasin
       POSTGRES_USER: magasin_user
       POSTGRES_PASSWORD: magasinpswd
-      
     volumes:
-     - pgdata:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
 
   api:
     build: .
@@ -19,5 +18,8 @@ services:
       - db
     environment:
       DB_HOST: db
-    stdin_open: true     # Same as -i
-    tty: true            # Same as -t
+    stdin_open: true
+    tty: true
+
+volumes:
+  db_data:
