@@ -1,6 +1,21 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:16
+    container_name: lab1_postgres
+    environment:
+      POSTGRES_DB: magasin
+      POSTGRES_USER: magasin_user
+      POSTGRES_PASSWORD: magasinpswd
+    ports:
+      - "5432:5432"
+
   api:
     build: .
     container_name: lab1_api
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+    command: ["java", "-jar", "app.jar", "--non-interactive"]
