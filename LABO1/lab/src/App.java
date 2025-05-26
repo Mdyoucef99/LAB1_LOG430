@@ -10,7 +10,7 @@ public class App {
             //get the environement we are using whether be it local or on docker 
             String host = System.getenv().getOrDefault("DB_HOST", "localhost");
             String databaseUrl = "jdbc:postgresql://" + host + ":5432/magasin";
-            
+
             String user = "magasin_user";
             String password = "magasinpswd";
             ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl, user, password);
@@ -25,7 +25,6 @@ public class App {
                 dao.ajouterProduit(new Produit(1, "Pain", "Nourriture", 2.5, 100));
                 dao.ajouterProduit(new Produit(2, "Lait", "Nourriture", 1.8, 50));
                 dao.ajouterProduit(new Produit(3, "Savon", "Autre", 3.2, 30));
-                System.out.println("Produits ajoutés à la base PostgreSQL.");
             }
 
             //Lancer un thread de caisse
