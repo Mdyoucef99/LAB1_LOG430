@@ -8,6 +8,9 @@ services:
       POSTGRES_DB: magasin
       POSTGRES_USER: magasin_user
       POSTGRES_PASSWORD: magasinpswd
+      
+    volumes:
+     - pgdata:/var/lib/postgresql/data
 
   api:
     build: .
