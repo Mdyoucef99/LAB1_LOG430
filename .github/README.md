@@ -6,10 +6,6 @@
 ## Exécution de l’application
 Dans la VM, le dossier racine ce trouve dans le fichier projects/LAB1_LOG430 .Assurez vous de faire un git -pull pour avoir la derniere version du repo
 
-Depuis le dossier racine du projet, exécutez le JAR :
-
-java -jar LAB1_LOG430.jar
-
 ## Tests unitaires
 
 Les bibliothèques JUnit se trouvent dans le dossier `lib` (`junit-4.13.2.jar` et `hamcrest-core-1.3.jar`). Depuis le dossier racine :
@@ -30,6 +26,7 @@ Construisez et testez l’image Docker :
 docker build -t lab1_api .
 docker run --rm -it --network host lab1_api
 ```
+
 
 **Résultat attendu :**
 
