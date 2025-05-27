@@ -34,6 +34,7 @@ docker run --rm -it --network host lab1_api
 **Résultat attendu :**
 
 Pour le resultat attendu vous devrier etre capable de lancer l'application et de voir la console avec les options : 
+
 --- MENU CAISSE ---
 1. Rechercher produit
 2. Enregistrer vente
@@ -53,7 +54,7 @@ docker-compose run --rm api
 
 **Résultat attendu :** 
 
-Vous devriez maintenant etre capable de rouler l'application et d'acceder a tous les produit dans la base de donnée dans qui est conteneurisé.
+Vous devriez maintenant être capable de lancer l'application et d'accéder à tous les produits dans la base de données qui est conteneurisée.
 
 Pour arrêter les services :
 
@@ -61,7 +62,7 @@ Pour arrêter les services :
 docker-compose down
 ```
 
-La pipeline CI/CD est configurée via **GitHub Actions** (ou GitLab CI/CD) et se déclenche à chaque push ou merge request. Elle exécute dans l’ordre :
+La pipeline CI/CD est configurée via **GitHub Actions** et se déclenche à chaque push ou merge request. Elle exécute dans l’ordre :
 
 1. **Lint** (Checkstyle)
 2. **Tests unitaires** (JUnit)
