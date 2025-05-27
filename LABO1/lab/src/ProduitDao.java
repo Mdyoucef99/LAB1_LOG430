@@ -21,6 +21,7 @@ public class ProduitDao {
         return produitDao.queryBuilder().where().like("nom", "%" + nom + "%").query();
     }
 
+
     public List<Produit> rechercherParCategorie(String cat) throws SQLException {
         return produitDao.queryBuilder().where().like("categorie", "%" + cat + "%").query();
     }
