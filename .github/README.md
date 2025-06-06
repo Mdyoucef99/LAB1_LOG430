@@ -45,7 +45,7 @@ Pour le resultat attendu vous devrier etre capable de lancer l'application et de
 Il existe un `docker-compose.yaml` à la racine, lancez :
 
 ```bash
-docker-compose -d db 
+docker-compose up -d 
 docker-compose run --rm api
 ```
 
