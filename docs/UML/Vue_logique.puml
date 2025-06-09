@@ -1,0 +1,52 @@
+@startuml
+skinparam linetype ortho
+left to right direction
+
+class Produit {
+  -id: int
+  -nom: String
+  -prix: double
+  -categorie: String
+  -quantite: int
+  +getId(): int
+  +getNom(): String
+  +getPrix(): double
+  +getCategorie(): String
+  +getQuantite(): int
+  +setNom(String): void
+  +setPrix(double): void
+  +setCategorie(String): void
+  +setQuantite(int): void
+}
+
+class ProduitDao {
+  -produitDao: Dao<Produit, Integer>
+  +ProduitDao(ConnectionSource)
+  +ajouterProduit(Produit): void
+  +rechercherParNom(String): List<Produit>
+  +rechercherParCategorie(String): List<Produit>
+  +rechercherParId(int): Produit
+  +enregistrerVente(int, int): void
+  +annulerVente(int, int): void
+  +getInventaire(): List<Produit>
+}
+
+class CaisseService {
+  -store: Store
+  -produitDao: ProduitDao
+  -stockDao: StockDao
+  -saleDao: SaleDao
+  +run(): void
+}
+
+class App {
+  +main(String[]): void
+}
+
+App --> CaisseService : crée
+App --> ProduitDao : crée
+CaisseService --> ProduitDao : dépendance
+ProduitDao --> Produit : accède et modifie
+CaisseService --> Produit : utilise pour traitement
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+skinparam shadowing false
+skinparam object3d true
+
+  folder "Docker Compose" {
+    node "API Container" as API {
+     component "CaisseApp"
+    }
+    node "DB Container" as DB {
+      database "magasin"
+    }
+  }
+
+
+API --> DB : JDBC
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+skinparam linetype ortho
+left to right direction
+
+class Produit
+class ProduitDao
+class CaisseService
+class App
+
+App          --> CaisseService  
+App          --> ProduitDao
+CaisseService --> ProduitDao
+CaisseService --> Produit
+ProduitDao   --> Produit
+
+@enduml

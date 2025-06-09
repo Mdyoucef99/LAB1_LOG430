@@ -1,0 +1,24 @@
+@startuml
+skinparam linetype ortho
+start
+:Lancer l'application;
+
+repeat
+    :Afficher le menu Caisse;
+    :Lire le choix Caisse;
+    if (Choix = 1) then (Rechercher)
+        :Rechercher et afficher produit;
+    elseif (Choix = 2) then (Vente)
+        :Enregistrer une vente;
+    elseif (Choix = 3) then (Retour)
+        :Enregistrer un retour;
+    elseif (Choix = 4) then (Inventaire)
+        :Afficher inventaire;
+    elseif (Choix = 0) then (Quitter)
+        stop
+    else
+        :Choix invalide;
+    endif
+repeat while (true)
+
+@enduml
